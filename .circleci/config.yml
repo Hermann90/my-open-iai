@@ -446,7 +446,7 @@ jobs:
           command: |
             ls
             pwd
-            terraform init
+            cd infra && terraform init
             terraform plan -out tfapply
       - persist_to_workspace:
           root: .
