@@ -446,8 +446,6 @@ jobs:
           command: |
             ls
             pwd
-            cd infra
-            pwd
             terraform init
             terraform plan -out tfapply
             ls
