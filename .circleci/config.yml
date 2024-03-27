@@ -446,7 +446,7 @@ jobs:
           command: |
             ls
             pwd
-            cd $CIRCLE_WORKING_DIRECTORY
+            cd infra
             pwd
             terraform init
             terraform plan -out tfapply
