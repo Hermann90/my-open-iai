@@ -445,8 +445,8 @@ jobs:
           name: terraform init & plan
           command: |
             ls
-            pwd
-            cd infra && terraform init
+            cd $CIRCLE_WORKING_DIRECTORY
+            terraform init
             terraform plan -out tfapply
       - persist_to_workspace:
           root: .
