@@ -436,7 +436,7 @@ jobs:
 
  # Job for Infra
   plan-apply:
-    working_directory: ~/my-open-iai/infra
+    working_directory: ~/my-open-iai
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
     steps:
@@ -445,7 +445,7 @@ jobs:
           name: terraform init & plan
           command: |
             ls
-            pwd
+            cd infra
             terraform init
             terraform plan -out tfapply
             ls
