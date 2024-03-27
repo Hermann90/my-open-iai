@@ -450,6 +450,8 @@ jobs:
             pwd
             terraform init
             terraform plan -out tfapply
+            ls
+            pwd
       - persist_to_workspace:
           root: .
           paths:
