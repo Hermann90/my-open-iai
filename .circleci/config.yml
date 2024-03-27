@@ -436,7 +436,7 @@ jobs:
 
  # Job for Infra
   plan-apply:
-    working_directory: ~/MY-OPEN-IAI/infra
+    working_directory: ~/my-open-iai/infra
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
     steps:
