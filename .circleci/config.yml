@@ -444,6 +444,8 @@ jobs:
       - run:
           name: terraform init & plan
           command: |
+            ls
+            pwd
             terraform init -input=false
             terraform plan -out tfapply -var-file terraform.tfvars
       - persist_to_workspace:
@@ -517,10 +519,6 @@ workflows:
           filters:
             branches:
               ignore: main
-      - deploy_website:
-          filters:
-            branches:
-              only: main
 
       - plan-apply
       - hold-apply:
@@ -540,7 +538,13 @@ workflows:
       - destroy:
           requires:
             - hold-destroy
-            
+
+      - deploy_website:
+          requires:
+            - "apply"
+          filters:
+            branches:
+              only: main      
 
       - test_website:
           requires:
