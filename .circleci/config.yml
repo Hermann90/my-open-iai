@@ -436,7 +436,7 @@ jobs:
 
  # Job for Infra
   plan-apply:
-    working_directory: ~/ParlAI/infra
+    working_directory: ~/project
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
     steps:
@@ -445,6 +445,7 @@ jobs:
           name: terraform init & plan
           command: |
             ls
+            pwd
             cd $CIRCLE_WORKING_DIRECTORY
             terraform init
             terraform plan -out tfapply
